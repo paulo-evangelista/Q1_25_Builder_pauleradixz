@@ -118,7 +118,6 @@ pub struct Initialize<'info> {
     pub system_program: Program<'info, System>,
 }
 
-// helper to check mint data, and demonstrate how to read mint extension data within a program
 impl<'info> Initialize<'info> {
     pub fn check_mint_data(&self) -> Result<()> {
         let mint = &self.mint_account.to_account_info();
@@ -169,7 +168,6 @@ pub struct InitializeExtraAccountMetaList<'info> {
 }
 
 // Define extra account metas to store on extra_account_meta_list account
-// In this example there are none
 impl<'info> InitializeExtraAccountMetaList<'info> {
     pub fn extra_account_metas() -> Result<Vec<ExtraAccountMeta>> {
         
@@ -191,11 +189,6 @@ impl<'info> InitializeExtraAccountMetaList<'info> {
 
     }
 
-
-// Order of accounts matters for this struct.
-// The first 4 accounts are the accounts required for token transfer (source, mint, destination, owner)
-// Remaining accounts are the extra accounts required from the ExtraAccountMetaList account
-// These accounts are provided via CPI to this program from the token2022 program
 #[derive(Accounts)]
 pub struct TransferHook<'info> {
     #[account(token::mint = mint, token::authority = owner)]

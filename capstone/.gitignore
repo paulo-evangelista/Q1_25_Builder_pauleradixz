@@ -1,8 +1,9 @@
 .anchor
 .DS_Store
 target
-
+wallet.json
 **/*.rs.bk
 node_modules
 test-ledger
 .yarn
+test-ledger

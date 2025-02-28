@@ -7,6 +7,10 @@ skip-lint = false
 [programs.localnet]
 security_token_program = "9qfVMGUqZubCJWmCXP4HomRRpkq6fWgcn6XZp4Z3gj4i"
 
+[programs.devnet]
+security_token_program = "9qfVMGUqZubCJWmCXP4HomRRpkq6fWgcn6XZp4Z3gj4i"
+
+
 [registry]
 url = "https://api.apr.dev"
 
